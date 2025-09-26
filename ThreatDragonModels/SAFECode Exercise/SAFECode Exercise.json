@@ -1,16 +1,175 @@
 {
   "version": "2.5.0",
   "summary": {
-    "title": "SAFECode Exercise",
-    "owner": "",
-    "description": "",
+    "title": "SAFECode - Web-based User Feedback System",
+    "owner": "Liam Sales",
+    "description": "Recreation of SAFECode 'Web-based User Feedback System' Data Flow Diagram (DFD). Shows User/Browser interacting with Web Application, LDAP for authentication, and SQL Database for saved feedback. Threats mapped via STRIDE exactly as in the diagram.",
     "id": 0
   },
   "detail": {
-    "contributors": [],
-    "diagrams": [],
-    "diagramTop": 0,
-    "reviewer": "",
-    "threatTop": 0
+    "diagrams": [
+      {
+        "title": "Web-based User Feedback System DFD",
+        "id": 0,
+        "cells": [
+          {
+            "type": "tm.Actor",
+            "id": "browser",
+            "z": 1,
+            "attrs": { "text": { "text": "Browser Client" } },
+            "threats": [
+              {
+                "threat_type": "Spoofing",
+                "description": "User credentials may be spoofed at the client/browser level.",
+                "status": "Open",
+                "severity": "High"
+              }
+            ]
+          },
+          {
+            "type": "tm.Actor",
+            "id": "webapp",
+            "z": 2,
+            "attrs": { "text": { "text": "Web Application" } },
+            "threats": [
+              {
+                "threat_type": "Spoofing",
+                "description": "Web application identity may be spoofed by attackers to trick the user.",
+                "status": "Open",
+                "severity": "High"
+              }
+            ]
+          },
+          {
+            "type": "tm.Process",
+            "id": "authprovider",
+            "z": 3,
+            "attrs": { "text": { "text": "Authorization Provider" } },
+            "threats": [
+              {
+                "threat_type": "Elevation of Privilege",
+                "description": "Attackers may attempt to escalate privileges within the authorization provider.",
+                "status": "Open",
+                "severity": "High"
+              }
+            ]
+          },
+          {
+            "type": "tm.Store",
+            "id": "sqldb",
+            "z": 4,
+            "attrs": { "text": { "text": "SQL Database" } },
+            "threats": [
+              {
+                "threat_type": "Tampering",
+                "description": "Tampering with the data using SQL Injection attacks.",
+                "status": "Open",
+                "severity": "High"
+              },
+              {
+                "threat_type": "Spoofing",
+                "description": "Database server identity may be spoofed by a malicious actor.",
+                "status": "Open",
+                "severity": "High"
+              }
+            ]
+          },
+          {
+            "type": "tm.Store",
+            "id": "ldap",
+            "z": 5,
+            "attrs": { "text": { "text": "LDAP" } }
+          },
+
+          <!-- Flows -->
+          {
+            "type": "tm.Flow",
+            "id": "flow1",
+            "z": 6,
+            "source": { "id": "browser" },
+            "target": { "id": "webapp" },
+            "attrs": { "text": { "text": "User Sends User Credentials" } }
+          },
+          {
+            "type": "tm.Flow",
+            "id": "flow2",
+            "z": 7,
+            "source": { "id": "webapp" },
+            "target": { "id": "authprovider" },
+            "attrs": { "text": { "text": "Auth Verification" } }
+          },
+          {
+            "type": "tm.Flow",
+            "id": "flow3",
+            "z": 8,
+            "source": { "id": "authprovider" },
+            "target": { "id": "ldap" },
+            "attrs": { "text": { "text": "Verifies the Privilege" } }
+          },
+          {
+            "type": "tm.Flow",
+            "id": "flow4",
+            "z": 9,
+            "source": { "id": "ldap" },
+            "target": { "id": "authprovider" },
+            "attrs": { "text": { "text": "Verified" } }
+          },
+          {
+            "type": "tm.Flow",
+            "id": "flow5",
+            "z": 10,
+            "source": { "id": "authprovider" },
+            "target": { "id": "webapp" },
+            "attrs": { "text": { "text": "User is Authenticated" } }
+          },
+          {
+            "type": "tm.Flow",
+            "id": "flow6",
+            "z": 11,
+            "source": { "id": "browser" },
+            "target": { "id": "webapp" },
+            "attrs": { "text": { "text": "Insert Feedback Comments" } }
+          },
+          {
+            "type": "tm.Flow",
+            "id": "flow7",
+            "z": 12,
+            "source": { "id": "webapp" },
+            "target": { "id": "sqldb" },
+            "attrs": { "text": { "text": "Insert Query With Feedback Comments" } }
+          },
+          {
+            "type": "tm.Flow",
+            "id": "flow8",
+            "z": 13,
+            "source": { "id": "sqldb" },
+            "target": { "id": "webapp" },
+            "attrs": { "text": { "text": "Success!" } }
+          },
+          {
+            "type": "tm.Flow",
+            "id": "flow9",
+            "z": 14,
+            "source": { "id": "webapp" },
+            "target": { "id": "browser" },
+            "attrs": { "text": { "text": "Feedback Comments Saved" } }
+          },
+
+          <!-- Trust Boundaries -->
+          {
+            "type": "tm.Boundary",
+            "id": "boundary1",
+            "z": 15,
+            "attrs": { "text": { "text": "Generic Trust Boundary" } }
+          },
+          {
+            "type": "tm.Boundary",
+            "id": "boundary2",
+            "z": 16,
+            "attrs": { "text": { "text": "Generic Trust Boundary" } }
+          }
+        ]
+      }
+    ]
   }
 }
