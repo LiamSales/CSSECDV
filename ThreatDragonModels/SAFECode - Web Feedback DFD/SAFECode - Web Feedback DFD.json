@@ -134,10 +134,10 @@
                   "id": "1a6f371d-dc82-4961-8875-e444b9ac17e2",
                   "title": "Spoofing",
                   "status": "Open",
-                  "severity": "TBD",
+                  "severity": "High",
                   "type": "Spoofing",
                   "description": "The web application\nmay be spoofed by an\nattacker and this may\nlead to unauthorized\naccess to the browser\nclient. (When\ndiscussed with the\ndesign team, it\nappears that this is not\npossible, as a security\nmechanism to identify\nthe server is present.) ",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "mitigation": "Use TLS/SSL, secure cookies, MFA",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 101,
@@ -145,7 +145,7 @@
                 }
               ],
               "threatFrequency": {
-                "spoofing": 2,
+                "spoofing": 3,
                 "repudiation": 0
               }
             }
@@ -278,10 +278,10 @@
                   "id": "8d7c4d10-fe5f-4bdd-9073-1d2e2a20d7cf",
                   "title": "Spoofing",
                   "status": "Open",
-                  "severity": "TBD",
+                  "severity": "High",
                   "type": "Tampering",
                   "description": "The SQL Database\nmay be spoofed by an\nattacker, and this may\nlead to data being\nwritten to the attacker's\ntarget instead of the\nSQL Database. (When\ndiscussed with the\ndesign team, it\nappears that this is not\npossible, as SQL\nconnection is made\nusing the database\nusername and\npassword.)",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "mitigation": "Use DB authentication, encrypted connections, and firewall rules.",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 103,
@@ -289,7 +289,7 @@
                 }
               ],
               "threatFrequency": {
-                "tampering": 3,
+                "tampering": 4,
                 "repudiation": 0,
                 "informationDisclosure": 0,
                 "denialOfService": 0
@@ -306,6 +306,9 @@
               "height": 120
             },
             "attrs": {
+              "text": {
+                "text": "Authorization\nProvider"
+              },
               "body": {
                 "stroke": "red",
                 "strokeWidth": 2.5,
@@ -400,7 +403,7 @@
             "id": "188216f5-e31c-4962-8c71-27a935c9b4e7",
             "data": {
               "type": "tm.Process",
-              "name": "Process",
+              "name": "Authorization\nProvider",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -415,10 +418,10 @@
                   "id": "7441990e-67b1-4a72-97ae-57243b3889c3",
                   "title": "Elevation Of Privilage",
                   "status": "Open",
-                  "severity": "TBD",
+                  "severity": "Critical",
                   "type": "Elevation of privilege",
                   "description": "An attacker may\npass data into the\nbrowser client in\norder to change the\nflow of program\nexecution within the\nbrowser client to\nthe attacker's\nchoosing.\n",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "mitigation": "Principle of least privilege",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 106,
@@ -431,7 +434,7 @@
                 "repudiation": 0,
                 "informationDisclosure": 0,
                 "denialOfService": 0,
-                "elevationOfPrivilege": 2
+                "elevationOfPrivilege": 4
               }
             }
           },
@@ -554,10 +557,10 @@
                   "id": "7360c22b-8e14-4855-9be7-29881af59d0a",
                   "title": "Spoofing",
                   "status": "Open",
-                  "severity": "TBD",
+                  "severity": "High",
                   "type": "Spoofing",
                   "description": "The web application\nmay be spoofed by an\nattacker and this may\nlead to unauthorized\naccess to the browser\nclient. (When\ndiscussed with the\ndesign team, it\nappears that this is not\npossible, as a security\nmechanism to identify\nthe server is present.) \n",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "mitigation": "Session tokens, request validation.",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 102,
@@ -565,7 +568,7 @@
                 }
               ],
               "threatFrequency": {
-                "spoofing": 2,
+                "spoofing": 3,
                 "repudiation": 0
               }
             }
@@ -1219,10 +1222,10 @@
                   "id": "2498c893-2abc-40f1-9a5b-80964a750e47",
                   "title": "Tampering With The Data Using The SQL Injection Attack",
                   "status": "Open",
-                  "severity": "TBD",
+                  "severity": "Critical",
                   "type": "Tampering",
                   "description": "SQL injection is an\nattack in which\nmalicious code is\ninserted into strings\nthat are later passed\nto an instance of SQL\nServer for parsing\nand execution.",
-                  "mitigation": "Defences include providing enforcement of behavioral workflow and anti-automation",
+                  "mitigation": "Input validation, parameterized queries, stored procedures",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 105,
@@ -1231,7 +1234,7 @@
               ],
               "threatFrequency": {
                 "spoofing": 0,
-                "tampering": 2,
+                "tampering": 3,
                 "repudiation": 0,
                 "informationDisclosure": 0,
                 "denialOfService": 0,
