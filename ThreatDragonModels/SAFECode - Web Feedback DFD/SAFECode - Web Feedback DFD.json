@@ -525,17 +525,7 @@
               "cell": "076bcebe-8627-4184-a84c-a37d9fd1f80c",
               "port": "7a076aaa-71f7-435d-bf90-e61cff53f97a"
             },
-            "vertices": [],
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead"
-              ],
-              "name": null
-            }
+            "vertices": []
           },
           {
             "shape": "flow",
@@ -720,6 +710,74 @@
             "vertices": []
           },
           {
+            "shape": "trust-boundary-curve",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Boundary",
+              "name": "Trust Boundary",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            },
+            "labels": [
+              "Trust Boundary"
+            ],
+            "id": "f1c1c63b-ebc4-439a-9791-f3cb57d7d7bd",
+            "source": {
+              "x": -6910,
+              "y": -940
+            },
+            "target": {
+              "x": -6610,
+              "y": -940
+            },
+            "vertices": [
+              {
+                "x": -6760,
+                "y": -920
+              }
+            ]
+          },
+          {
+            "shape": "trust-boundary-curve",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Boundary",
+              "name": "Trust Boundary",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            },
+            "labels": [
+              "Trust Boundary"
+            ],
+            "id": "153476ed-e4a8-41fe-a921-df179e830b64",
+            "source": {
+              "x": -6820,
+              "y": -990
+            },
+            "target": {
+              "x": -6820,
+              "y": -410
+            },
+            "vertices": [
+              {
+                "x": -6880,
+                "y": -740
+              },
+              {
+                "x": -6840,
+                "y": -470
+              }
+            ]
+          },
+          {
             "shape": "flow",
             "attrs": {
               "line": {
@@ -809,17 +867,7 @@
               "cell": "1dadc1b4-41a3-44ac-a998-1f5e09d734f6",
               "port": "5e128206-fdd8-4fe2-ac10-e9b734295fa2"
             },
-            "vertices": [],
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead"
-              ],
-              "name": null
-            }
+            "vertices": []
           },
           {
             "shape": "flow",
@@ -1075,6 +1123,42 @@
               "port": "44568351-a69d-4c44-819b-15025bc137fd"
             },
             "vertices": []
+          },
+          {
+            "shape": "trust-boundary-curve",
+            "width": 200,
+            "height": 100,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Boundary",
+              "name": "Trust Boundary",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            },
+            "labels": [
+              "Trust Boundary"
+            ],
+            "id": "bfeed764-c13f-498e-8bd1-269037f26ae0",
+            "source": {
+              "x": -6408,
+              "y": -1078
+            },
+            "target": {
+              "x": -6408,
+              "y": -498
+            },
+            "vertices": [
+              {
+                "x": -6468,
+                "y": -828
+              },
+              {
+                "x": -6428,
+                "y": -558
+              }
+            ],
+            "zIndex": 21
           }
         ]
       }
